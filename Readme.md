@@ -1,12 +1,20 @@
-***TBD:***
-===========
+DONE:
+====
+- ~~App structure~~
+- ~~Database~~ `(SQLite)`
+- ~~Models & Schemas~~
+- ~~Routers & handlers~~
+- ~~`CRUD` service~~
+
+TBD:
+====
 - Add `config.py`
 - Add `tests`
 - Add `Basic HTTP Auth`
 - Add `CORS`
 - Extend `Readme`
 
-**Possible future improvements:**
-========== 
+Possible future improvements:
+==== 
 - Migration to `PostgreSQL`
 - Migrations with `Alembic`
