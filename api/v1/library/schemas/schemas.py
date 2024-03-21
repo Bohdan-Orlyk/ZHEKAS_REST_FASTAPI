@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Optional
 
 from pydantic import BaseModel, EmailStr
 
@@ -7,7 +7,6 @@ class ReadUser(BaseModel):
     name: str
     surname: str
     email: EmailStr
-    articles: List["ArticleRead"]
 
 
 class CreateUser(BaseModel):
@@ -25,8 +24,18 @@ class ReadCreatedUser(BaseModel):
 class ArticleCreate(BaseModel):
     name: str
     content: str
-    user_id: int
 
 
 class ArticleRead(ArticleCreate):
     id: int
+    user_id: int
+
+
+class ReadUserWithArticles(BaseModel):
+    id: int
+    name: str
+    surname: Optional[str]
+    email: EmailStr
+
+    articles: List[ArticleRead]
+
