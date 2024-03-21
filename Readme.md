@@ -13,6 +13,7 @@ TBD:
 - Add `Basic HTTP Auth`
 - Add `CORS`
 - Extend `Readme`
+- End `dockerfile`
 
 Possible future improvements:
 ==== 
