@@ -35,8 +35,8 @@ def register(user: CreateUser, session=Depends(get_session)):
 
 @users.post("/login/")
 def login(authed_user=Depends(auth_service.get_auth_user)):
-
-    return {"code": status.HTTP_200_OK, "login": "OK"}
+    if authed_user:
+        return {"code": status.HTTP_200_OK, "login": "OK"}
 
 
 @users.post("/logout/", status_code=status.HTTP_401_UNAUTHORIZED)
