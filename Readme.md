@@ -5,12 +5,12 @@ DONE:
 - ~~Models & Schemas~~
 - ~~Routers & handlers~~
 - ~~`CRUD` service~~
+- ~~Add `Basic HTTP Auth`~~
 
 TBD:
 ====
 - Add `config.py`
 - Add `tests`
-- Add `Basic HTTP Auth`
 - Add `CORS`
 - Extend `Readme`
 - End `dockerfile`
