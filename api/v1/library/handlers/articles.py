@@ -23,9 +23,7 @@ def get_article_by_authors_id(authed_user=Depends(auth_service.get_auth_user),
                               session=Depends(get_session)):
     all_articles = crud_service.get_articles_by_author(session=session, authors_id=authed_user.id)
 
-    if all_articles:
-        return all_articles
-    raise HTTPException(status_code=status.HTTP_404_NOT_FOUND)
+    return all_articles
 
 
 @articles.post("/", response_model=ArticleRead, status_code=status.HTTP_201_CREATED)
