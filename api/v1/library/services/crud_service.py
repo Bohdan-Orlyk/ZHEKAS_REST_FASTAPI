@@ -15,7 +15,7 @@ def create_article(*, session: Session, article: ArticleCreate, user_id: int) ->
 
 
 def get_articles(*, session: Session):
-    stmt = select(Article)
+    stmt = select(Article).limit(5)
     articles = session.exec(stmt)
 
     return articles
