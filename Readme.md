@@ -6,16 +6,16 @@ DONE:
 - ~~Routers & handlers~~
 - ~~`CRUD` service~~
 - ~~Add `Basic HTTP Auth`~~
+- ~~Add `CORS`~~
 
 TBD:
 ====
 - Add `config.py`
 - Add `tests`
-- Add `CORS`
 - Extend `Readme`
 - End `dockerfile`
 
 Possible future improvements:
 ==== 
-- Migration to `PostgreSQL`
+- Migrate DB to `PostgreSQL`
 - Migrations with `Alembic`
