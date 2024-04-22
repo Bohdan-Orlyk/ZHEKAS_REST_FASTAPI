@@ -17,20 +17,38 @@ async def lifespan(app: FastAPI):
     print("GOODBYE!!!")
 
 
-app = FastAPI(lifespan=lifespan)
+def set_routers(app: FastAPI, routers_list: list) -> None:
+    [app.include_router(router) for router in routers_list]
 
-ROUTERS = [users, articles]
-origins = [
-    "http://localhost:3000",
-]
 
-if __name__ == "__main__":
+def set_cors(app: FastAPI, origins_list: list) -> None:
     app.add_middleware(
         CORSMiddleware,
-        allow_origins=origins,
+        allow_origins=origins_list,
         allow_credentials=True,
         allow_methods=["*"],
         allow_headers=["*"],
     )
-    [app.include_router(router) for router in ROUTERS]
-    uvicorn.run(app=app)
+
+
+def init_app():
+    app = FastAPI(lifespan=lifespan)
+
+    ROUTERS = [
+        users,
+        articles
+    ]
+
+    origins = [
+        "http://localhost:3000",
+    ]
+    if ROUTERS:
+        set_routers(app, routers_list=ROUTERS)
+    if origins:
+        set_cors(app, origins_list=origins)
+
+    return app
+
+
+if __name__ == "__main__":
+    uvicorn.run(app=init_app())
