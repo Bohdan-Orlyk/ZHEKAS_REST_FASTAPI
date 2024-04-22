@@ -7,11 +7,11 @@ DONE:
 - ~~`CRUD` service~~
 - ~~Add `Basic HTTP Auth`~~
 - ~~Add `CORS`~~
+- Add ~~`tests`~~
 
 TBD:
 ====
-- Add `config.py`
-- Add `tests`
+- Add `config.py` 1/2
 - Extend `Readme`
 - End `dockerfile`
 
