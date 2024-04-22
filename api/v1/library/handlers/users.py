@@ -11,8 +11,10 @@ users = APIRouter(prefix="/users", tags=["Users"])
 
 
 @users.get("/", response_model=List[ReadCreatedUser])  # TODO admin only
-def get_all_users():
-    return {"message": "OK!"}
+def get_all_users(session=Depends(get_session)):
+    all_users = crud_service.get_user_with_articles(session=session)
+
+    return all_users
 
 
 @users.get("/user-articles", response_model=List[ReadUserWithArticles])
