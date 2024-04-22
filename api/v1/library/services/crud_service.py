@@ -69,7 +69,7 @@ def get_auth_user(*, session: Session, user_email: str):
 
 
 def get_user_with_articles(*, session: Session):
-    stmt = select(User)  # .where(User.email == user_schema.email)
+    stmt = select(User)
 
     user_with_articles = session.exec(stmt)
 
